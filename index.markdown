@@ -14,23 +14,23 @@ Implement a variety of networking protocols for both UDP/TCP of increasing compl
 Golangs built in profiler was very nice here as it's a one liner and my solution was not running locally:
 
 ```go
-    import (
-    // Profiler deps
-	"log"
-	"net/http"
-	_ "net/http/pprof"
-    )
+import (
+// Profiler deps
+    "log"
+    "net/http"
+    _ "net/http/pprof"
+)
 
-	go func() {
-		log.Println(http.ListenAndServe(":8080", nil)) // used for the pprof profiler
-	}()
+go func() {
+    log.Println(http.ListenAndServe(":8080", nil)) // used for the pprof profiler
+}()
 
 ```
 
 Then profile with:
 
 ```shell
-    go tool pprof -http=:9090 http://<IP>:8080/debug/pprof/profile?seconds=30
+go tool pprof -http=:9090 http://<IP>:8080/debug/pprof/profile?seconds=30
 ```
 
 *   [Firewatch - Golang](https://github.com/JeremyFenwick/Firewatch)
