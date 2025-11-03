@@ -3,6 +3,13 @@ layout: default
 title: Home
 ---
 
-# Welcome to my Hacker-themed site
+# Jeremy Fenwick's Github Nav
 
-This is now your GitHub Pages site using the Hacker theme.
+## Programming Challenges
+
+### Protohackers
+
+Implement a variety of networking protocols for both UDP/TCP of increasing complexity. The latter challenges test performance as well. I completed this in both Golang and C# with differing architectural approaches.
+
+*   Golang: https://github.com/JeremyFenwick/Firewatch
+*   C#: https://github.com/JeremyFenwick/Firewatch-C
