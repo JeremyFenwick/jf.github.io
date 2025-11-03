@@ -9,7 +9,7 @@ title: Home
 
 ### PROTOHACKERS
 
-Implement a variety of networking protocols for both UDP/TCP of increasing complexity. The latter challenges have performance restrictions as well. I completed this in both Golang and C# with differing architectural approaches.
+Implement a variety of networking protocols for both UDP/TCP of increasing complexity. The latter challenges have heavy performance restrictions as well. I completed this in both Golang and C# with differing architectural approaches. 
 
 *   [Firewatch - Golang](https://github.com/JeremyFenwick/Firewatch)
 *   [Firewatch-C - C#](https://github.com/JeremyFenwick/Firewatch-C)
@@ -38,7 +38,7 @@ Codecrafters offers a variety of challenges where they generate all the tests fo
 
 ### BITTORRENT
 
-Implements the Bittorrent protocol. This involved building a Bencode encoder/decoder (I never use libraries for these things) but the download scheduler was by far the most complex part of the build. It isn't required to pass the tests but I wanted to deal with disconnects, partial downloads, out of order downloads, etc. I used the actor model for safe concurrency.
+Implements the Bittorrent protocol. This involved building a Bencode encoder/decoder (I never use libraries for these things) but the download scheduler was by far the most complex part of the build. It isn't required to pass the tests but I wanted to deal with disconnects, partial downloads, out of order downloads, scalable throughput etc. I used the actor model for safe concurrency.
 
 *   [Broadstone - Kotlin](https://github.com/JeremyFenwick/Broadstone)
 
