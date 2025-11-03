@@ -1,6 +1,8 @@
 title: Jeremy Fenwick
 description: Jeremy Fenwick's project page. Focused on programming challenges.
-baseurl: "jf.github.io"   # <-- your repo name
+# baseurl: "jf.github.io"   # <-- your repo name
+baseurl: ""
+# url: "https://jeremyfenwick.github.io"
 url: "https://jeremyfenwick.github.io"
 
 remote_theme: pages-themes/hacker@v0.2.0
