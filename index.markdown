@@ -27,6 +27,12 @@ Golangs built in profiler was very nice here as it's a one liner and my solution
 
 ```
 
+Then profile with:
+
+```shell
+    go tool pprof -http=:9090 http://<IP>:8080/debug/pprof/profile?seconds=30
+```
+
 *   [Firewatch - Golang](https://github.com/JeremyFenwick/Firewatch)
 *   [Firewatch-C - C#](https://github.com/JeremyFenwick/Firewatch-C)
 
