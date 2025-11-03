@@ -7,7 +7,7 @@ title: Home
 
 ## Programming Challenges
 
-### Protohackers
+### PROTOHACKERS
 
 Implement a variety of networking protocols for both UDP/TCP of increasing complexity. The latter challenges have performance restrictions as well. I completed this in both Golang and C# with differing architectural approaches.
 
@@ -24,4 +24,38 @@ The largest challenge i've attempted overall - build an entire computer up to th
 
 The ray tracer challenge but I approached this with Test Driven Design to see how I liked it (I didn't actually like it that much... =( ). I implemented the math library myself which is not ideal for performance but forced me to relearn linear algebra.
 
-*   [Apollo - C#](https://github.com/JeremyFenwick/Apollo/tree/main)
+*   [Apollo - C#](https://github.com/JeremyFenwick/Apollo)
+
+### INFINIS
+
+A maze generator and solver. An exploration of various interesting algoritms such as Djikstra's, sidewinder, aldous broder, etc.
+
+*   [Inifis - C#](https://github.com/JeremyFenwick/Infinis)
+
+## CODECRAFTERS 
+
+Codecrafters offers a variety of challenges where they generate all the tests for you, so it's about incrementally passing each stage until you have a complete solution.
+
+### BITTORRENT
+
+Implements the Bittorrent protocol. This involved building a Bencode encoder/decoder (I never use libraries for these things) but the download scheduler was by far the most complex part of the build. It isn't required to pass the tests but I wanted to deal with disconnects, partial downloads, out of order downloads, etc. I used the actor model for safe concurrency.
+
+*   [Broadstone - Kotlin](https://github.com/JeremyFenwick/Broadstone)
+
+### SHELL
+
+A very straightforward project - build a Shell clone! Where things get complicated is when we start chaining commands together and piping outputs. There were a lot of footguns around interfacing with the OS for this from the JVM. Used a good old fashion Word Trie for text prediction.
+
+* [Terminus - Kotlin](https://github.com/JeremyFenwick/Terminus)
+
+### GREP
+
+Another straightforward project - create a Grep clone. The trick here is to use an Abstract Syntax Tree and Tokenizer together to keep the design clean. 
+
+* [Repper - C#](https://github.com/JeremyFenwick/Repper)
+
+### REDIS (WIP)
+
+The largest project offered by Codecrafters which is to build a full Redis clone. I restarted this recently as I wanted to rebuild the entire architecture based on my first draft. 
+
+* [Reaper - C# (In Progress)](https://github.com/JeremyFenwick?tab=repositories)
