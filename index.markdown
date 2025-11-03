@@ -50,7 +50,16 @@ A very straightforward project - build a Shell clone! Where things get complicat
 
 ### GREP
 
-Another straightforward project - create a Grep clone. The trick here is to use an Abstract Syntax Tree and Tokenizer together to keep the design clean. Each node of the AST is encapsulated as it knows how to evaluate itself. Building the AST requires recursive descent, which I also used for the compiler in the Hack challenge.
+Another straightforward project - create a Grep clone. The trick here is to use an Abstract Syntax Tree and Tokenizer together to keep the design clean. Each node of the AST is encapsulated as it knows how to evaluate itself - where "evaluate" returns a list of valid *next* positions. Building the AST requires recursive descent, which I also used for the compiler in the Hack challenge.
+
+```csharp
+public abstract record AstNode
+{
+    // Returns the next valid positions (if any)
+    public abstract List<int> Evaluate(string input, int currentPosition, CaptureContext context);
+    public abstract void Print(int depth = 0);
+}
+```
 
 * [Repper - C#](https://github.com/JeremyFenwick/Repper)
 
