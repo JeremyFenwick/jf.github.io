@@ -9,7 +9,7 @@ title: Home
 
 ### PROTOHACKERS
 
-Implement a variety of networking protocols for both UDP/TCP of increasing complexity. The later challenges have heavy performance restrictions as well. I completed this in both Golang and C# with differing architectural approaches. C# uses an inheritance model with a base UDP/TCP server, where in Golang each solution is independent with no shared code. 
+Implement a variety of networking protocols for both UDP/TCP of increasing complexity. The later challenges have heavy performance restrictions as well and are fairly diabolical with the edge cases. I completed this in both Golang and C# with differing architectural approaches. C# uses an inheritance model with a base UDP/TCP server, where in Golang each solution is independent with no shared code. 
 
 Golangs built in profiler was very nice here as it's a one liner and my solution was not running locally:
 
