@@ -9,7 +9,23 @@ title: Home
 
 ### PROTOHACKERS
 
-Implement a variety of networking protocols for both UDP/TCP of increasing complexity. The latter challenges have heavy performance restrictions as well. I completed this in both Golang and C# with differing architectural approaches. 
+Implement a variety of networking protocols for both UDP/TCP of increasing complexity. The latter challenges have heavy performance restrictions as well. I completed this in both Golang and C# with differing architectural approaches. C# uses an inheretence model with a base UDP/TCP server, where in Golang each solution is independent with no shared code. 
+
+Golangs built in profiler was very nice here as it's a one liner and my solution was not running locally:
+
+```go
+    import (
+    // Profiler deps
+	"log"
+	"net/http"
+	_ "net/http/pprof"
+    )
+
+	go func() {
+		log.Println(http.ListenAndServe(":8080", nil)) // used for the pprof profiler
+	}()
+
+```
 
 *   [Firewatch - Golang](https://github.com/JeremyFenwick/Firewatch)
 *   [Firewatch-C - C#](https://github.com/JeremyFenwick/Firewatch-C)
