@@ -44,13 +44,13 @@ Implements the Bittorrent protocol. This involved building a Bencode encoder/dec
 
 ### SHELL
 
-A very straightforward project - build a Shell clone! Where things get complicated is when we start chaining commands together and piping outputs. There were a lot of footguns around interfacing with the OS for this from the JVM. Used a good old fashion Word Trie for text prediction.
+A very straightforward project - build a Shell clone! Where things get complicated is when we start chaining commands together and piping outputs. There were a lot of footguns around interfacing with the OS for this from the JVM. Used a good old fashioned Word Trie for text prediction.
 
 * [Terminus - Kotlin](https://github.com/JeremyFenwick/Terminus)
 
 ### GREP
 
-Another straightforward project - create a Grep clone. The trick here is to use an Abstract Syntax Tree and Tokenizer together to keep the design clean. 
+Another straightforward project - create a Grep clone. The trick here is to use an Abstract Syntax Tree and Tokenizer together to keep the design clean. Each node of the AST is encapsulated as it knows how to evaluate itself. Building the AST requires recursive descent, which I also used for the compiler in the Hack challenge.
 
 * [Repper - C#](https://github.com/JeremyFenwick/Repper)
 
