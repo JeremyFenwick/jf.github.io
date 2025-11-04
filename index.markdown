@@ -40,7 +40,7 @@ To be fair dotnet-monitor does something similar (in theory!)
 
 ### HACK
 
-The largest challenge i've attempted overall - build an entire computer up to the operating system from nothing but NAND gates. A very fun project. The bulk of the project is written in the JACK language I wrote the compiler for or the provided HDL, but for *that* I used good 'ol C#.
+The largest challenge i've attempted overall - build an entire computer up to the operating system from nothing but NAND gates. A very fun project. The bulk of the project is written in either HDL or the JACK language I wrote the compiler for, but for *that* I used good 'ol C#.
 
 *  [Hack - C#/Hack](https://github.com/JeremyFenwick/Hack)
 
