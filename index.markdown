@@ -49,7 +49,7 @@ public Task<string?> BlPop(BlPop blPop)
 }
 ```
 
-The *try* pattern is also excellent for parsing relative to other languages in my experience. One of the reasons I prefer C# for these challenges is that over networks we have to assume we will get partial messages and this approach naturally accommodates that requirement. Spans are also great for slinging buffer references around.
+The *try* pattern is also excellent for parsing relative to other languages in my experience. One of the reasons I prefer C# for these challenges is that over networks we have to assume we will get partial messages and this approach naturally accommodates that requirement. Spans are also great for slinging buffer references around. Other languages have
 
 ```csharp
 private static bool TryParseString(ReadOnlySpan<byte> data, int length, ref int consumed, out string value)
@@ -68,7 +68,7 @@ Implements the Bittorrent protocol. This involved building a Bencode encoder/dec
 
 ### SHELL
 
-A very straightforward project - build a Shell clone! Where things get complicated is when we start chaining commands together and piping outputs. There were a lot of footguns around interfacing with the OS for this from the JVM. Used a good old fashioned Word Trie for text prediction.
+A very straightforward project - build a Shell clone! Where things get complicated is when we start chaining commands together and piping outputs. There were a lot of footguns around interfacing with the OS for this from the JVM. Used a good old fashioned Word Trie for text prediction. I also had a Rust version of this when I was learning that language but I lost it =(.
 
 * [Terminus - Kotlin](https://github.com/JeremyFenwick/Terminus)
 
