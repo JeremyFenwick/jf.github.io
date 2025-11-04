@@ -73,7 +73,7 @@ Then profile with:
 go tool pprof -http=:9090 http://<IP>:8080/debug/pprof/profile?seconds=30
 ```
 
-To be fair dotnet-monitor does something similar (in theory!)
+To be fair dotnet-monitor does something similar (in theory!). Go has very weak data structure support relative to C#, I had to roll my own [thread-safe Max-Heap](https://github.com/JeremyFenwick/Firewatch/blob/main/internal/jobcenter/maxheap.go), for example.
 
 *   [Firewatch - Golang](https://github.com/JeremyFenwick/Firewatch)
 *   [Firewatch-C - C#](https://github.com/JeremyFenwick/Firewatch-C)
