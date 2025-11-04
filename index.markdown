@@ -123,7 +123,9 @@ To be fair dotnet-monitor does something similar (in theory!). Go has very weak 
 
 ### HACK
 
-The largest challenge i've attempted overall - build an entire computer up to the operating system from nothing but NAND gates. A very fun project. The bulk of the project is written in either HDL or the JACK language I wrote the compiler for, but for *that* I used good 'ol C#.
+The largest challenge i've attempted overall - build an entire computer up to the operating system from nothing but NAND gates. This includes writing all the hardware in HDL (CPU/ALU/Memory) to the assembler and compiler - up to a programming language named Jack. From there we write the OS itself with basic keyboard and screen support. Writing code in a programming language you designed then running it through your own compiler makes for a really satisfying experience. 
+
+The bulk of the project is written in either HDL or the JACK language I wrote the compiler for, but for *that* I used good 'ol C#.
 
 *  [Hack - C#/HDL/Jack](https://github.com/JeremyFenwick/Hack)
 
