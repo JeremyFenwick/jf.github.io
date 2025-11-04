@@ -32,7 +32,7 @@ public record BlPop(string Key, int TimeoutMs = 0) : Request(), IWithTaskSource,
 // timer or the event queue gets there first, which is a natural expression of the problem.
 // 
 // Note the timer may stick around for a little while upon completion via the event queue, but the
-// cost is so marginal trying to improve this is premature optimization imo
+// cost is so marginal trying to improve this is premature optimization 
 public Task<string?> BlPop(BlPop blPop)
 {
     if (_requestQueue.Writer.TryWrite(blPop))
