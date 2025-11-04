@@ -5,7 +5,47 @@ title: Home
 
 # Jeremy Fenwick's Github Nav
 
-## Programming Challenges
+## CODECRAFTERS 
+
+Codecrafters offers a variety of challenges where they generate all the tests for you, so it's about incrementally passing each stage until you have a complete solution. These challenges are interesting because they generally require building a replica of some well known technology. 
+
+### BITTORRENT
+
+Implements the Bittorrent protocol. This involved building a Bencode encoder/decoder (I never use libraries for these things) but the download scheduler was by far the most complex part of the build. It isn't required to pass the tests but I wanted to deal with disconnects, partial downloads, out of order downloads, scalable throughput etc. I used the actor model for safe concurrency.
+
+*   [Broadstone - Kotlin](https://github.com/JeremyFenwick/Broadstone)
+
+### SHELL
+
+A very straightforward project - build a Shell clone! Where things get complicated is when we start chaining commands together and piping outputs. There were a lot of footguns around interfacing with the OS for this from the JVM. Used a good old fashioned Word Trie for text prediction.
+
+* [Terminus - Kotlin](https://github.com/JeremyFenwick/Terminus)
+
+### GREP
+
+Another straightforward project - create a Grep clone. The trick here is to use an Abstract Syntax Tree and Tokenizer together to keep the design clean. Each node of the AST is encapsulated as it knows how to evaluate itself - where "evaluate" returns a list of valid *next* positions. Building the AST requires recursive descent, which I also used for the compiler in the Hack challenge.
+
+```csharp
+public abstract record AstNode
+{
+    // Returns the next valid positions (if any)
+    public abstract List<int> Evaluate(string input, int currentPosition, CaptureContext context);
+    public abstract void Print(int depth = 0);
+}
+```
+Without a strong architecture the result is a descent into a madness, as you can see in some other completed solutions =P
+
+* [Repper - C#](https://github.com/JeremyFenwick/Repper)
+
+### REDIS (WIP)
+
+The largest project offered by Codecrafters which is to build a full Redis clone. I restarted this recently as I wanted to rebuild the entire architecture based on my first draft. Real redis is single threaded, and so is my solution at least with respect to the underlying database. 
+
+The central Key-Value data store is built around and event loop, where we process a single message at a time. This prevents data races and such, but we still use async/await for all the networking.
+
+* [Reaper - C# (In Progress)](https://github.com/JeremyFenwick?tab=repositories)
+
+## OTHER CHALLENGES
 
 ### PROTOHACKERS
 
@@ -56,40 +96,3 @@ A maze generator and solver. An exploration of graph theory and various related 
 
 *   [Inifis - C#](https://github.com/JeremyFenwick/Infinis)
 
-## CODECRAFTERS 
-
-Codecrafters offers a variety of challenges where they generate all the tests for you, so it's about incrementally passing each stage until you have a complete solution. These challenges are interesting because they generally require building a replica of some well known technology. 
-
-### BITTORRENT
-
-Implements the Bittorrent protocol. This involved building a Bencode encoder/decoder (I never use libraries for these things) but the download scheduler was by far the most complex part of the build. It isn't required to pass the tests but I wanted to deal with disconnects, partial downloads, out of order downloads, scalable throughput etc. I used the actor model for safe concurrency.
-
-*   [Broadstone - Kotlin](https://github.com/JeremyFenwick/Broadstone)
-
-### SHELL
-
-A very straightforward project - build a Shell clone! Where things get complicated is when we start chaining commands together and piping outputs. There were a lot of footguns around interfacing with the OS for this from the JVM. Used a good old fashioned Word Trie for text prediction.
-
-* [Terminus - Kotlin](https://github.com/JeremyFenwick/Terminus)
-
-### GREP
-
-Another straightforward project - create a Grep clone. The trick here is to use an Abstract Syntax Tree and Tokenizer together to keep the design clean. Each node of the AST is encapsulated as it knows how to evaluate itself - where "evaluate" returns a list of valid *next* positions. Building the AST requires recursive descent, which I also used for the compiler in the Hack challenge.
-
-```csharp
-public abstract record AstNode
-{
-    // Returns the next valid positions (if any)
-    public abstract List<int> Evaluate(string input, int currentPosition, CaptureContext context);
-    public abstract void Print(int depth = 0);
-}
-```
-Without a strong architecture the result is a descent into a madness, as you can see in some other completed solutions =P
-
-* [Repper - C#](https://github.com/JeremyFenwick/Repper)
-
-### REDIS (WIP)
-
-The largest project offered by Codecrafters which is to build a full Redis clone. I restarted this recently as I wanted to rebuild the entire architecture based on my first draft. Real redis is single threaded, and so is my solution at least with respect to the underlying database. The central Key-Value data store is built around and event loop, where we process a single message at a time. This prevents data races and such, but we still use async/await for all the networking.
-
-* [Reaper - C# (In Progress)](https://github.com/JeremyFenwick?tab=repositories)
