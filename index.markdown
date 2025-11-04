@@ -9,6 +9,14 @@ title: Home
 
 Codecrafters offers a variety of challenges where they generate all the tests for you, so it's about incrementally passing each stage until you have a complete solution. These challenges are interesting because they generally require building a replica of some well known technology. 
 
+### REDIS (WIP)
+
+The largest project offered by Codecrafters which is to build a full Redis clone. I restarted this recently as I wanted to rebuild the entire architecture based on my first draft. Real redis is single threaded, and so is my solution at least with respect to the underlying database. 
+
+The central Key-Value data store is built around and event loop, where we process a single message at a time. This prevents data races and such, but we still use async/await for all the networking.
+
+* [Reaper - C# (In Progress)](https://github.com/JeremyFenwick?tab=repositories)
+
 ### BITTORRENT
 
 Implements the Bittorrent protocol. This involved building a Bencode encoder/decoder (I never use libraries for these things) but the download scheduler was by far the most complex part of the build. It isn't required to pass the tests but I wanted to deal with disconnects, partial downloads, out of order downloads, scalable throughput etc. I used the actor model for safe concurrency.
@@ -36,14 +44,6 @@ public abstract record AstNode
 Without a strong architecture the result is a descent into a madness, as you can see in some other completed solutions =P
 
 * [Repper - C#](https://github.com/JeremyFenwick/Repper)
-
-### REDIS (WIP)
-
-The largest project offered by Codecrafters which is to build a full Redis clone. I restarted this recently as I wanted to rebuild the entire architecture based on my first draft. Real redis is single threaded, and so is my solution at least with respect to the underlying database. 
-
-The central Key-Value data store is built around and event loop, where we process a single message at a time. This prevents data races and such, but we still use async/await for all the networking.
-
-* [Reaper - C# (In Progress)](https://github.com/JeremyFenwick?tab=repositories)
 
 ## OTHER CHALLENGES
 
