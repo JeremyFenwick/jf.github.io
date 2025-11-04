@@ -48,6 +48,15 @@ public Task<string?> BlPop(BlPop blPop)
 }
 ```
 
+The *try* pattern is also excellent for parsing relative to other languages. One of the reasons I prefer C# for these challenges.
+
+```csharp
+private static bool TryParseString(ReadOnlySpan<byte> data, int length, ref int consumed, out string value)
+{
+    // CONTENTS
+}
+```
+
 * [Reaper - C# (In Progress)](https://github.com/JeremyFenwick?tab=repositories)
 
 ### BITTORRENT
