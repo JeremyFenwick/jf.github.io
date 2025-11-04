@@ -90,6 +90,6 @@ Without a strong architecture the result is a descent into a madness, as you can
 
 ### REDIS (WIP)
 
-The largest project offered by Codecrafters which is to build a full Redis clone. I restarted this recently as I wanted to rebuild the entire architecture based on my first draft. Real redis is single threaded, and so is my solution. The central Key-Value data store is built around and event loop, where we process a single message at a time. This prevents data races and such, but we still use async/await for all the networking.
+The largest project offered by Codecrafters which is to build a full Redis clone. I restarted this recently as I wanted to rebuild the entire architecture based on my first draft. Real redis is single threaded, and so is my solution at least with respect to the underlying database. The central Key-Value data store is built around and event loop, where we process a single message at a time. This prevents data races and such, but we still use async/await for all the networking.
 
 * [Reaper - C# (In Progress)](https://github.com/JeremyFenwick?tab=repositories)
