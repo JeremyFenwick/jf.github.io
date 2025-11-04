@@ -16,13 +16,32 @@ The largest project offered by Codecrafters which is to build a full Redis clone
 The central Key-Value data store is built around and event loop, where we process a single message at a time. This prevents data races and such, but we still use async/await for all the networking. C#'s abstractions around Tasks make blocking and timeout requests fairly painless:
 
 ```csharp
-public record Set(string Key, string Value, int ExpiryMs = 0) : Request(), IWithTaskSource, IHasKey
+// Blocking Pop command with optional timeout
+public record BlPop(string Key, int TimeoutMs = 0) : Request(), IWithTaskSource, IHasKey
 {
-    public TaskCompletionSource<bool> TaskSource { get; } = new();
+    public TaskCompletionSource<string?> TaskSource { get; } = new();
+
     public void SetException(Exception exception)
     {
         TaskSource.TrySetException(exception);
     }
+}
+
+// At the data structure call site we set the timer. Note the use of TrySetResult, we have a race between the timer
+// and the event queue, but TrySetResult makes this perfectly fine. Either the timer or the event queue gets there 
+// first, which is a natural expression of the problem.
+public Task<string?> BlPop(BlPop blPop)
+{
+    if (_requestQueue.Writer.TryWrite(blPop))
+    {
+        // Set the timer if it exists
+        if (blPop.TimeoutMs > 0)
+            _ = Task.Delay(TimeSpan.FromMilliseconds(blPop.TimeoutMs))
+                .ContinueWith(_ => blPop.TaskSource.TrySetResult(null));
+        return blPop.TaskSource.Task;
+    }
+
+    throw new Exception("Failed to add BlPop request to queue");
 }
 ```
 
