@@ -58,7 +58,7 @@ A maze generator and solver. An exploration of graph theory and various related 
 
 ## CODECRAFTERS 
 
-Codecrafters offers a variety of challenges where they generate all the tests for you, so it's about incrementally passing each stage until you have a complete solution. These challenges are interesting because they generally require building a replica of some well known technology.
+Codecrafters offers a variety of challenges where they generate all the tests for you, so it's about incrementally passing each stage until you have a complete solution. These challenges are interesting because they generally require building a replica of some well known technology. 
 
 ### BITTORRENT
 
@@ -84,6 +84,7 @@ public abstract record AstNode
     public abstract void Print(int depth = 0);
 }
 ```
+Without a strong architecture the result is a descent into a madness, which I saw in other completed solutions once I was done =P
 
 * [Repper - C#](https://github.com/JeremyFenwick/Repper)
 
