@@ -131,7 +131,7 @@ The bulk of the project is written in either HDL or the JACK language I wrote th
 
 ### APOLLO
 
-The ray tracer challenge but I approached this with Test Driven Design to see how I liked it (I didn't actually like it that much... =( ). I implemented the math library myself which is not ideal for performance but forced me to relearn linear algebra.
+The ray tracer challenge but I approached this with Test Driven Design to see how I liked it (I didn't actually like it that much... =( ). This codebase has an absurd number of tests but I didn't find it caught bugs as well as expected - mostly it was just tedious. I implemented the math library myself which is not ideal for performance but forced me to relearn some linear algebra.
 
 *   [Apollo - C#](https://github.com/JeremyFenwick/Apollo)
 
