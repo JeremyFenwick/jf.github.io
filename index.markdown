@@ -84,7 +84,7 @@ public abstract record AstNode
     public abstract void Print(int depth = 0);
 }
 ```
-Without a strong architecture the result is a descent into a madness, which I saw in other completed solutions once I was done =P
+Without a strong architecture the result is a descent into a madness, as you can see in some other completed solutions =P
 
 * [Repper - C#](https://github.com/JeremyFenwick/Repper)
 
