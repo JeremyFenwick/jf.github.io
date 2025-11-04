@@ -58,7 +58,7 @@ A maze generator and solver. An exploration of graph theory and various related 
 
 ## CODECRAFTERS 
 
-Codecrafters offers a variety of challenges where they generate all the tests for you, so it's about incrementally passing each stage until you have a complete solution.
+Codecrafters offers a variety of challenges where they generate all the tests for you, so it's about incrementally passing each stage until you have a complete solution. These challenges are interesting because they generally require building a replica of some well known technology.
 
 ### BITTORRENT
 
