@@ -29,7 +29,7 @@ public record BlPop(string Key, int TimeoutMs = 0) : Request(), IWithTaskSource,
 
 // At the data structure call site we set the timer. Note the use of TrySetResult, we have a race 
 // between the timer and the event queue, but TrySetResult makes this perfectly fine. Either the 
-//timer or the event queue gets there first, which is a natural expression of the problem.
+// timer or the event queue gets there first, which is a natural expression of the problem.
 // 
 // Note the timer may stick around for a little while upon completion via the event queue, but the
 // cost is so marginal trying to improve this is premature optimization imo
