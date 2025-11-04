@@ -52,7 +52,7 @@ The ray tracer challenge but I approached this with Test Driven Design to see ho
 
 ### INFINIS
 
-A maze generator and solver. An exploration of various interesting algoritms such as Djikstra's, sidewinder, aldous broder, etc.
+A maze generator and solver. An exploration of graph theory and various related algoritmms such as Djikstra's, Sidewinder, Aldous Broder, etc.
 
 *   [Inifis - C#](https://github.com/JeremyFenwick/Infinis)
 
