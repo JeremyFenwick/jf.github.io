@@ -7,7 +7,7 @@ title: Home
 
 ## CODECRAFTERS 
 
-Codecrafters offers a variety of challenges where they generate all the tests for you, so it's about incrementally passing each stage until you have a complete solution. These challenges are interesting because they generally require building a replica of some well known technology. 
+Codecrafters offers a variety of challenges where they generate all the tests for you, so it's about incrementally passing each stage until you have a complete solution. These challenges are interesting because they usually require building a replica of some well known technology. 
 
 ### REDIS (WIP)
 
