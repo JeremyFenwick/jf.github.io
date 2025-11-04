@@ -82,7 +82,7 @@ To be fair dotnet-monitor does something similar (in theory!)
 
 The largest challenge i've attempted overall - build an entire computer up to the operating system from nothing but NAND gates. A very fun project. The bulk of the project is written in either HDL or the JACK language I wrote the compiler for, but for *that* I used good 'ol C#.
 
-*  [Hack - C#/Hack](https://github.com/JeremyFenwick/Hack)
+*  [Hack - C#/HDL/Jack](https://github.com/JeremyFenwick/Hack)
 
 ### APOLLO
 
