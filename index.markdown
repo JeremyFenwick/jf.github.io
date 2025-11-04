@@ -48,7 +48,7 @@ public Task<string?> BlPop(BlPop blPop)
 }
 ```
 
-The *try* pattern is also excellent for parsing relative to other languages in my experience. One of the reasons I prefer C# for these challenges.
+The *try* pattern is also excellent for parsing relative to other languages in my experience. One of the reasons I prefer C# for these challenges. Over networks we have to assume we will get partial messages and this approach naturally accomidates that requirement.
 
 ```csharp
 private static bool TryParseString(ReadOnlySpan<byte> data, int length, ref int consumed, out string value)
