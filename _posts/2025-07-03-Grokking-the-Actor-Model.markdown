@@ -140,6 +140,8 @@ This is the most complex actor of the four in that it creates as many of the oth
 ```
 The start function kicks things off by creating the initial batch of actors we need. From there, we just loop on the inbox as we always do. I haven't specified here how we deal with disconnected peers or unresponsive peers here but the conceptual model doesn't change at all. We can scale this to as many peers, pieces and files as we like.
 
+#### Backpressure
+
 Note the use of channels creates a natural ability to throttle the system. With our file actor our inbox was specified this way:
 
 ```kotlin
