@@ -41,7 +41,7 @@ So another idea i've seen used is to use a statically allocated List over and ov
 private static readonly List<string> _thisIsEvil = []; // One time allocation!
 ```
 
-This is a one time allocation but the problem is someone can start adding to the list somewhere down the line which will weack havok on your codebase, its just terrible design. Readonly protects against changing the reference but you can modify the underlying data all day long.
+This is a one time allocation but the problem is someone can start adding to the list somewhere down the line which will wreak havok on your codebase, its just terrible design. Readonly protects against changing the reference but you can modify the underlying data all day long.
 
 So apparently there is a solution! There is another interface *IReadOnlyList* which is self explanatory I think. If we use that, we do this:
 
