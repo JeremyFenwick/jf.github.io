@@ -157,12 +157,12 @@ When you write a solution with this approach it tends to just *work*, since the 
 Note the use of channels creates a natural ability to throttle the system. With our file actor our inbox was specified this way:
 
 ```kotlin
-    val inbox: Channel<DMMessage> = Channel(Channel.BUFFERED)
+val inbox: Channel<DMMessage> = Channel(Channel.BUFFERED)
 ```
 But we can change it to:
 
 ```kotlin
-    val inbox: Channel<DMMessage> = Channel(1)
+val inbox: Channel<DMMessage> = Channel(1)
 ```
 This would force the writes to be serialized. If the disk IO was slow, it would create natural backpressure:
 
