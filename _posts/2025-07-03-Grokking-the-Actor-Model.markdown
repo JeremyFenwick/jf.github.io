@@ -26,7 +26,7 @@ Overall this is a problem that requires *a lot* of concurrency and a fairly comp
 
 ### The Actor Model
 
-I first learned about the actor model from working with Elixir/Erlang distributed systems in my spare time. Conceptually each "actor" handles processing and state management on its own. Actors then pass messages between eachother via their inboxes. This approach is extremely robust and offers fantastic horizontal scaling without the use of mutexes, locks or semaphores - all of which are very tricky to work with and reason about at scale.
+I first learned about the actor model from working with Elixir/Erlang distributed systems in my spare time. Conceptually each "actor" handles processing and state management on its own. Actors then pass messages between eachother via their inboxes. This approach is extremely robust and offers fantastic horizontal scaling without the use of mutexes, locks or semaphores - all of which are very tricky to work with and reason about at scale. Critically state is encapsulated within each actor and only ever shared via message passing. This eliminates a large category of bugs right out the gate.
 
 But I think its best to see it in action. So lets solve our scheduling problem. We only need four actors for the simplest solution to this problem, each with its own responsibility:
 
@@ -142,8 +142,7 @@ The start function kicks things off by creating the initial batch of actors we n
 
 When you write a solution with this approach it tends to just *work*, since the problem of shared mutable state is avoided entirely.
 
-#### Backpressure
-
+g
 Note the use of channels creates a natural ability to throttle the system. With our file actor our inbox was specified this way:
 
 ```kotlin
