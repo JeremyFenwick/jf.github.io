@@ -97,7 +97,7 @@ Here we are attempting to parse a string within our parser. Because we were give
 As we chain these commands together the count of the consumed bytes moves forward automatically. Here is section of code parsing some data written in the redis protocol, which looks like this "$4/r/nsing/r/n":
 
 ```csharp
-for (var i = 0; i < arrayLength; i++)
+for (var i = 0; i < wordCount; i++)
 {
     // Consume the $ before the integer
     var span = data[consumed..];
