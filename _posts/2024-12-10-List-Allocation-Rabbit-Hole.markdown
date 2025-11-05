@@ -48,8 +48,13 @@ So apparently there is a solution! There is another interface *IReadOnlyList* wh
 ```csharp
 pop.TaskSource.TrySetResult(Array.Empty<string>()); // No allocation!
 ```
-Since its read only it does make sense. Also in modern C# you can just use the shorthand so you don't have to remember the Array.Empty thing. Interesting!
+Since its read only it does make sense that it satisfies the interface. Also in modern C# you can just use the shorthand so you don't have to remember the Array.Empty thing. 
 
 ```csharp
 pop.TaskSource.TrySetResult([]); // No allocation!
 ```
+
+Using immutable data structures is something i'm fond of anyway, I just never remember to specify the read only interface. Its an area where Kotlin's immutable by default approach makes this stuff much simpler.
+
+Anyway, Interesting!
+
