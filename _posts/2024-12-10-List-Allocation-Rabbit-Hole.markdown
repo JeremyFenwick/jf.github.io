@@ -6,7 +6,7 @@ categories: weirdness
 author: JF
 tags:
   - C#
-  - data structurs
+  - data structures
   - but why?
 ---
 ### Lists, how do they *** work!?
