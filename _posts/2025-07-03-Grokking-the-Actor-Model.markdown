@@ -3,6 +3,7 @@ layout: post
 title:  "Grokking the Actor Model"
 date:   2025-07-03 18:43:14 +1100
 categories: design patterns
+author: JF
 ---
 ### Intro
 

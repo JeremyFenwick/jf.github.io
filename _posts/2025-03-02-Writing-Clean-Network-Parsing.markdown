@@ -3,6 +3,7 @@ layout: post
 title:  "Writing Clean Network Parsing"
 date:   2025-03-02 19:23:11 +1100
 categories: design patterns
+author: JF
 ---
 ### Intro
 
