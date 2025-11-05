@@ -54,7 +54,7 @@ Since its read only it does make sense that it satisfies the interface. Also in 
 pop.TaskSource.TrySetResult([]); // No allocation!
 ```
 
-Using immutable data structures is something i'm fond of anyway, I just never remember to specify the read only interface. Its an area where Kotlin's immutable by default approach makes this stuff much simpler.
+Using immutable data structures is something i'm fond of anyway, I just never remember to specify the read only interface for lists. Its an area where Kotlin's immutable by default approach makes this stuff much simpler.
 
 Anyway, Interesting!
 
