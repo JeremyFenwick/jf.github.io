@@ -131,7 +131,7 @@ This is the most complex actor of the four in that it creates as many of the oth
     suspend fun start() {
     // Create the file actors we need based on the torrent
     // Create the peer actors we need based on the peers list
-    // Generate the list of pieces contained in the torrent to track completions
+    // Generate the list of pieces & files contained in the torrent to track completions
     // Create at least one piece actor
     // Instruct each piece actor to begin downloading. BeginDownload -> [Piece Actor]Inbox
     }
