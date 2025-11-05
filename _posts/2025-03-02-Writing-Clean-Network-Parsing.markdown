@@ -101,8 +101,8 @@ for (var i = 0; i < arrayLength; i++)
 {
     // Consume the $ before the integer
     var span = data[consumed..];
-    if (span.Length == 0 || span[0] != (byte)'$')
-        throw new FormatException("Expected bulk string type");
+    if (span.Length == 0) return false;
+    if (span[0] != (byte)'$') throw new FormatException("Expected bulk string type");
     consumed++;
     // Get the data itself
     if (!TryParseInt(data[consumed..], ref consumed, out var length)) return false;
