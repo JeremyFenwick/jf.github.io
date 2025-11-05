@@ -28,7 +28,7 @@ I was joking the other day that C# is so complicated creating a list requires a 
 }
 ```
 
-Poking around one solution is to use an IEnumerable instead. Why? Because we can do this instead:
+Poking around one solution is to use an IEnumerable instead. Why? Because we can do this:
 
 ```csharp
 pop.TaskSource.TrySetResult(Enumerable.Empty<string>()); // No heap allocation!
