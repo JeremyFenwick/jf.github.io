@@ -135,7 +135,7 @@ This is the most complex actor of the four in that it creates as many of the oth
     // Inbox -> ChunkData. Forward to the relevant piece actor. ChunkData -> [Piece Actor]Inbox
     // Inbox -> PieceCompleted. Track this internally and forward to the file actor. Piece Completed -> [File Actor]Inbox. Generate a new piece actor and send it a begin download message. BeginDownload -> [Piece Actor]Inbox
     // Inbox -> File Completed. Check this off internally and shut down the file actor.
-    // Inbox -> Bad Piece. Tell the relevant piece actor to re request all chunks. BeginDownload -> [Piece Actor]
+    // Inbox -> Bad Piece. Tell the relevant piece actor to re request all chunks. BeginDownload -> [Piece Actor]Inbox
   }
 ```
 The start function kicks things off by creating the initial batch of actors we need. From there, we just loop on the inbox as we always do. I haven't specified here how we deal with disconnected peers or unresponsive peers here but the conceptual model doesn't change at all. We can scale this to as many peers, pieces and files as we like.
