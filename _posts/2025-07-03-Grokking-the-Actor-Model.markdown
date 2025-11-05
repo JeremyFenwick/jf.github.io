@@ -140,6 +140,8 @@ This is the most complex actor of the four in that it creates as many of the oth
 ```
 The start function kicks things off by creating the initial batch of actors we need. From there, we just loop on the inbox as we always do. I haven't specified here how we deal with disconnected peers or unresponsive peers here but the conceptual model doesn't change at all. We can scale this to as many peers, pieces and files as we like and add functionality to each actor as required.
 
+When you write a solution with this approach it tends to just *work*, since the problem of shared mutable state is avoided entirely.
+
 #### Backpressure
 
 Note the use of channels creates a natural ability to throttle the system. With our file actor our inbox was specified this way:
