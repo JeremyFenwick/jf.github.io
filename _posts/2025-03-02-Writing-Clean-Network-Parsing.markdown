@@ -100,14 +100,12 @@ As we chain these commands together the count of the consumed bytes moves forwar
 for (var i = 0; i < wordCount; i++)
 {
     // Consume the $ before the integer
-    var span = data[consumed..];
-    if (span.Length == 0) return false;
-    if (span[0] != (byte)'$') throw new FormatException("Expected bulk string type");
-    consumed++;
-    // Get the data itself
+    if (!TryParseStringStart(data[consumed..], ref consumed)) return false;
+    // Get the string length
     if (!TryParseInt(data[consumed..], ref consumed, out var length)) return false;
+    // Get the string itself
     if (!TryParseString(data[consumed..], length, ref consumed, out var str)) return false;
     result.Add(str);
 }
 ```
-The way spans and consumed interact makes this elegant to write relative to other approaches i've tried.
+The way spans and consumed interact makes this very elegant to read and write relative to other approaches i've tried.
