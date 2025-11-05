@@ -154,9 +154,9 @@ But we can change it to:
 ```
 This would force the writes to be serialized. If the disk IO was slow, it would create natural backpressure:
 
-* PieceActor finishes a piece → tries PieceCompleted to FileActor's inbox
-* FileActor is busy writing previous piece → channel is full (capacity 1) → the send suspends
-* Because the send suspends, the ManagerActor is also suspended when forwarding messages, which in turn slows down new chunk requests
-* This slows PieceActors from requesting more chunks → automatically throttling download rate to what the disk can handle
+* The Piece Actor finishes a piece, and then send PieceCompleted -> [Manager Actor]Inbox
+* The Manager Actor now wants to forward this to the File Actor with PieceCompleted -> Inbox [File Actor]. However FileActor is busy writing previous piece so its channel capacity of 1 is full until it completes the write. This suspends the Manager Actors send
+* Because the send suspends, the Manager Actor is also suspended from forwarding other messages, which in turn slows down new chunk requests
+* This slows down Peer Actors from requesting more chunks as they aren't receiving any RequestChunk messages
 
-The channels themselves allow for the system to throttle itself appropriately over time.
+The channels themselves allow for the system to throttle itself appropriately over time, and are a tunable parameter for the overall system.
