@@ -33,7 +33,7 @@ Poking around one solution is to use an IEnumerable instead. Why? Because we can
 ```csharp
 pop.TaskSource.TrySetResult(Enumerable.Empty<string>()); // No heap allocation!
 ```
-Apparently the compiler optimises this for you not actually allocating any memory - interesting! The problem is, IEnumerable is a limited interface. To get **count** for example we have to iterate over the entire data structure which is O(N) for what would be O(1) with a list. 
+Apparently the compiler optimises this for you not actually allocating any memory - interesting! The problem is, IEnumerable is a limited interface. To get **count** for example we have to iterate over the entire data structure which is O(N) for what would be O(1) with a list. Converting an IEnumerable into a list is very expensive so that isn't an option either.
 
 So another idea i've seen used is to use a statically allocated List over and over again.
 
