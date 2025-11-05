@@ -142,7 +142,6 @@ The start function kicks things off by creating the initial batch of actors we n
 
 When you write a solution with this approach it tends to just *work*, since the problem of shared mutable state is avoided entirely.
 
-g
 Note the use of channels creates a natural ability to throttle the system. With our file actor our inbox was specified this way:
 
 ```kotlin
