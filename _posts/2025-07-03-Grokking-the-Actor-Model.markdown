@@ -136,16 +136,23 @@ This is the most complex actor of the four in that it creates as many of the oth
     // Instruct each piece actor to begin downloading. BeginDownload -> [Piece Actor]Inbox
     }
     
-    // Inbox -> RequestChunk. Choose a peer at random and forward the message. RequestChunk -> [Peer Actor]Inbox
+    // Inbox -> RequestChunk. Choose a peer at random and forward the message. 
+    //    RequestChunk -> [Peer Actor]Inbox
     // Inbox -> ChunkData. Forward to the relevant piece actor. ChunkData -> [Piece Actor]Inbox
-    // Inbox -> PieceCompleted. Track this internally and forward to the file actor. Piece Completed -> [File Actor]Inbox. Generate a new piece actor and send it a begin download message. BeginDownload -> [Piece Actor]Inbox
+    // Inbox -> PieceCompleted. Track this internally and forward to the file actor. 
+    //    Piece Completed -> [File Actor]Inbox. 
+    //    Generate a new piece actor and send it a begin download message. 
+    //    BeginDownload -> [Piece Actor]Inbox
     // Inbox -> File Completed. Check this off internally and shut down the file actor.
-    // Inbox -> Bad Piece. Tell the relevant piece actor to re request all chunks. BeginDownload -> [Piece Actor]Inbox
+    // Inbox -> Bad Piece. Tell the relevant piece actor to re request all chunks. 
+    //    BeginDownload -> [Piece Actor]Inbox
   }
 ```
 The start function kicks things off by creating the initial batch of actors we need. From there, we just loop on the inbox as we always do. I haven't specified here how we deal with disconnected peers or unresponsive peers here but the conceptual model doesn't change at all. We can scale this to as many peers, pieces and files as we like and add functionality to each actor as required.
 
 When you write a solution with this approach it tends to just *work*, since the problem of shared mutable state is avoided entirely.
+
+#### Backpressure
 
 Note the use of channels creates a natural ability to throttle the system. With our file actor our inbox was specified this way:
 
