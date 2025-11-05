@@ -147,7 +147,7 @@ A maze generator and solver. An exploration of graph theory and various related 
   {% for post in site.posts %}
     <li>
       <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      {{ post.date | date: "%Y-%m-%d" }}
+      {{ post.date | date: "%Y" }}
     </li>
   {% endfor %}
 </ul>
