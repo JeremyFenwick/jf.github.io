@@ -99,7 +99,7 @@ As we chain these commands together the count of the consumed bytes moves forwar
 ```csharp
 for (var i = 0; i < wordCount; i++)
 {
-    // Consume the $ before the integer
+    // Consume the $ before the string length
     if (!TryParseStringStart(data[consumed..], ref consumed)) return false;
     // Get the string length
     if (!TryParseInt(data[consumed..], ref consumed, out var length)) return false;
