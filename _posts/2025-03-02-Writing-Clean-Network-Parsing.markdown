@@ -94,7 +94,7 @@ private static bool TryParseString(ReadOnlySpan<byte> data, int length, ref int 
 ```
 Here we are attempting to parse a string within our parser. Because we were given a *ref int* we can modify consumed directly to tell the caller how many bytes we used. Because we take in data as a span we can start parsing at index 0 without dealing with indices over a larger array.
 
-As we chain these commands together the count of the consumed bytes moves forward automatically. Here is section of code parsing some data written in the redis protocol, which looks like this "$4/r/nsing/r/n":
+As we chain these commands together the count of the consumed bytes moves forward automatically. Here is section of code parsing some data written in the redis protocol, which is formatted like this -> "$4/r/nsing/r/n":
 
 ```csharp
 for (var i = 0; i < wordCount; i++)
