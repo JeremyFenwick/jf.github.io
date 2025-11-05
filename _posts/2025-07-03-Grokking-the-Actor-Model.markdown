@@ -87,7 +87,7 @@ In the Bittorrent protocol we establish TCP connections with our peers via hands
     // PeerConnection -> Recieve data from the peer, ChunkData -> Outbox
  }
 ```
-This actor does two things. Upon recieving a RequestChunk message in its inbox, it requests the specified chunk from the peer over TCP. Upon recieving the data from its peer connection, it then writes the ChunkData message to the outbox. Thats it! 
+This actor has two functions we can imagine with pseudocode. Upon recieving a RequestChunk message in its inbox, it requests the specified chunk from the peer over TCP. Upon recieving the data from its peer connection, it then writes the ChunkData message to the outbox. Thats it! 
 
 For each peer we want to download from, we create a new PeerActor to manage that connection.
 
