@@ -106,7 +106,7 @@ private static bool TryParseStringStart(ReadOnlySpan<byte> data, ref int consume
 }
 ```
 
-As we chain these commands together the count of the consumed bytes moves forward automatically. Here is section of code parsing some data written in the redis protocol, which is formatted like this -> "$4/r/nsing/r/n":
+As we chain these commands together the count of the consumed bytes moves forward automatically. Here is section of code parsing some data written in the redis protocol, which is formatted like this -> **"$4/r/nsing/r/n"**:
 
 ```csharp
 for (var i = 0; i < wordCount; i++)
