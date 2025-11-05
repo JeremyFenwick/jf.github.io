@@ -5,7 +5,17 @@ title: Home
 
 # Jeremy Fenwick's Github Nav
 
-## CODECRAFTERS 
+## Posts
+
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
+## CODECRAFTERS CHALLENGES 
 
 Codecrafters offers a variety of challenges where they generate all the tests for you, so it's about incrementally passing each stage until you have a complete solution. These challenges are interesting because they usually require building a replica of some well known technology. 
 
@@ -140,13 +150,3 @@ The ray tracer challenge but I approached this with Test Driven Design to see ho
 A maze generator and solver. An exploration of graph theory and various related algoritmms such as Djikstra's, Sidewinder, Aldous Broder, etc.
 
 *   [Inifis - C#](https://github.com/JeremyFenwick/Infinis)
-
-## Posts
-
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    </li>
-  {% endfor %}
-</ul>
