@@ -82,7 +82,7 @@ It naturally captures the idea that we don't care about the return values consum
 ```csharp
 private static bool TryParseString(ReadOnlySpan<byte> data, int length, ref int consumed, out string value)
 {
-    value = "";
+    value = ""; // Equivalent to string.Empty. No allocation!
 
     if (data.Length < length + 2) return false;
     if (data[length] != '\r' || data[length + 1] != '\n') throw new FormatException("Invalid string format");
