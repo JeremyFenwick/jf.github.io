@@ -38,7 +38,7 @@ The parsing section of the code is where things get messy though. We need to cal
 * What that message is if it exists
 * The number of bytes used to parse that message
 
-Whilst this isn't the most difficult code in the world to write it can easily descend into a mess of passing a byte counter back and forth between funcions or unwanted allocations. We don't really want to pass raw buffer data right into a parser as it may mess with our data, but copying it creates an allocation right on the spot.
+Whilst this isn't the most difficult code in the world to write it can easily descend into a mess of passing a byte counter back and forth between functions or generating unwanted heap allocations. We don't really want to pass raw buffer data right into a parser as it may mess with our data, but copying it creates an allocation right on the spot.
 
 ### Spans
 

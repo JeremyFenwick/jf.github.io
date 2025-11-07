@@ -37,7 +37,7 @@ Apparently the compiler optimises this for you not actually allocating any memor
 
 So another idea i've seen used is to use a statically allocated List over and over again.
 
-```csharp
+```csharpf
 private static readonly List<string> _thisIsEvil = []; // One time allocation!
 ```
 
