@@ -68,7 +68,7 @@ private static bool TryParseString(ReadOnlySpan<byte> data, int length, ref int 
 }
 ```
 
-* [Reaper - C# (In Progress)](https://github.com/JeremyFenwick?tab=repositories)
+* [Reaper - C# (In Progress)](https://github.com/JeremyFenwick/Reaper)
 
 ### BITTORRENT
 
