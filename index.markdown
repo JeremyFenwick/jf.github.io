@@ -70,6 +70,12 @@ private static bool TryParseString(ReadOnlySpan<byte> data, int length, ref int 
 
 * [Reaper - C# (In Progress)](https://github.com/JeremyFenwick/Reaper)
 
+### DNS
+
+Build a DNS server with forwarding enabled. This project involves a lot of bitwise and byte-level programming where AI assistance is quite useful, but also shows the limitations of those systems overall as they get stuck very easily. This sort of project plays to Go's strengths really well - networking app's in this language are just a breeze.
+
+* [Denis - Golang](https://github.com/JeremyFenwick/Denis)
+
 ### BITTORRENT
 
 Implements the Bittorrent protocol. This involved building a Bencode encoder/decoder (I never use libraries for these things) but the download scheduler was by far the most complex part of the build. It isn't required to pass the tests but I wanted to deal with disconnects, partial downloads, out of order downloads, scalable throughput etc. I used the actor model for safe concurrency.
