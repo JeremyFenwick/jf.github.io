@@ -109,7 +109,7 @@ if err != nil {
 bufferPool.Put(buffer[:0])
 ```
 
-[Hatter - Golang](https://github.com/JeremyFenwick/Hatter)
+* [Hatter - Golang](https://github.com/JeremyFenwick/Hatter)
 
 ### DNS
 
