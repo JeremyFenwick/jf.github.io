@@ -92,21 +92,21 @@ var bufferPool = sync.Pool{
 We can then grab the buffer, do our stuff and free it at the end. Be careful to flush the writer before returning it to the pool though!
 
 ```golang
-    // Response generation stuff here...
+// Response generation stuff here...
 
-	// Write the response
-	_, err := writer.Write(buffer)
-	if err != nil {
-		return err
-	}
+// Write the response
+_, err := writer.Write(buffer)
+if err != nil {
+    return err
+}
 
-	err = writer.Flush()
-	if err != nil {
-		return err
-	}
+err = writer.Flush()
+if err != nil {
+    return err
+}
 
-	// Reset length and put back into pool
-	bufferPool.Put(buffer[:0])
+// Reset length and put back into pool
+bufferPool.Put(buffer[:0])
 ```
 
 [Hatter - Golang](https://github.com/JeremyFenwick/Hatter)
