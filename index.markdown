@@ -78,7 +78,7 @@ Write a HTTP server with concurrency and compression support. A fairly straightf
 go server.Handler(context)
 ```
 
-The most interesting part was experimenting with sync.Pool. When generating responses we use buffers - instead of constantly allocating new buffers we simple reuse them from a pool. This should relieve pressure from the GC:
+The most interesting part was experimenting with sync.Pool. When generating responses we use buffers - instead of constantly allocating new buffers we reuse them from a pool. This should relieve pressure from the GC:
 
 ```golang
 var bufferPool = sync.Pool{
