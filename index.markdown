@@ -70,6 +70,47 @@ private static bool TryParseString(ReadOnlySpan<byte> data, int length, ref int 
 
 * [Reaper - C# (In Progress)](https://github.com/JeremyFenwick/Reaper)
 
+### HTTP
+
+Write a HTTP server with concurrency and compression support. A fairly straightforward project, since Go's green threading approach makes the concurrency side of this basically a one liner:
+
+```golang
+go server.Handler(context)
+```
+
+The most interesting part was experimenting with sync.Pool. When generating responses we use buffers - instead of constantly allocating new buffers we simple reuse them from a pool. This should relieve pressure from the GC:
+
+```golang
+var bufferPool = sync.Pool{
+	New: func() any {
+		b := make([]byte, 0, ResponseCapacity)
+		return b
+	},
+}
+```
+
+We can then grab the buffer, do our stuff and free it at the end. Be careful to flush the writer before returning it to the pool though!
+
+```golang
+    // Response generation stuff here...
+
+	// Write the response
+	_, err := writer.Write(buffer)
+	if err != nil {
+		return err
+	}
+
+	err = writer.Flush()
+	if err != nil {
+		return err
+	}
+
+	// Reset length and put back into pool
+	bufferPool.Put(buffer[:0])
+```
+
+[Hatter - Golang](https://github.com/JeremyFenwick/Hatter)
+
 ### DNS
 
 Build a DNS server with forwarding enabled. This project involves a lot of bitwise and byte-level programming where AI assistance is quite useful, but also shows the limitations of those systems overall as they get stuck very easily. It is also quite good at generating test cases if you prime it well. 
