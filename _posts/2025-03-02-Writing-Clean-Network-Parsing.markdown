@@ -174,6 +174,7 @@ func loadInt(buffer []byte, num int, index *int) {
 
 	digitsCount := digits(num)
 	for i := digitsCount - 1; i >= 0; i-- {
+        // Get the last digit then + '0' to get its ASCII value
 		buffer[*index+i] = byte(num%10) + '0'
 		num /= 10
 	}
