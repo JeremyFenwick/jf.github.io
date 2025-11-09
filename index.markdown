@@ -72,7 +72,7 @@ private static bool TryParseString(ReadOnlySpan<byte> data, int length, ref int 
 
 ### DNS
 
-Build a DNS server with forwarding enabled. This project involves a lot of bitwise and byte-level programming where AI assistance is quite useful, but also shows the limitations of those systems overall as they get stuck very easily. It is also quite good at generating test cases if you prime it well. This sort of project plays to Go's strengths really well - networking app's in this language are just a breeze.
+Build a DNS server with forwarding enabled. This project involves a lot of bitwise and byte-level programming where AI assistance is quite useful, but also shows the limitations of those systems overall as they get stuck very easily. It is also quite good at generating test cases if you prime it well. This sort of project plays to Go's strengths really well - networking app's in this language are just a breeze with nothing more than the std library.
 
 * [Denis - Golang](https://github.com/JeremyFenwick/Denis)
 
