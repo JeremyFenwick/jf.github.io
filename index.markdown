@@ -92,7 +92,10 @@ var bufferPool = sync.Pool{
 We can then grab the buffer, do our stuff and free it at the end. Be careful to flush the writer before returning it to the pool though!
 
 ```golang
-// Response generation stuff here...
+// Grab our buffer
+buffer := bufferPool.Get().([]byte)
+
+// Do our response generation stuff building the buffer...
 
 // Write the response
 _, err := writer.Write(buffer)
