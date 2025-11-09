@@ -122,7 +122,7 @@ for (var i = 0; i < wordCount; i++)
 ```
 The way spans and consumed interact makes this very elegant to read and write relative to other approaches i've tried.
 
-We can accomplish something similar in go with references. This is code that encodes a http response header whilst avoiding generating too many unwanted allocations. Because we are using slices we don't get the nice safety properties as we did with C# but the result still works
+We can accomplish something similar in go with references. This is code that encodes a http response header whilst avoiding generating unwanted allocations. Because we are using slices we don't get the nice safety properties as we did with C# but the result still works
 
 ```golang
 // Encode - turn the response into a byte array
