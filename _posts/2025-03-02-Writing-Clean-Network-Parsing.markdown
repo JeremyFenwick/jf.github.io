@@ -136,23 +136,7 @@ func (response *Response) Encode() []byte {
 	loadString(buffer, response.Version, &index)
 	loadString(buffer, " ", &index)
 	loadInt(buffer, response.Status, &index)
-	loadString(buffer, " ", &index)
-	loadString(buffer, response.Reason, &index)
-	loadString(buffer, "\r\n", &index)
-
-	// Headers
-	for k, v := range response.Headers {
-		loadString(buffer, k, &index)
-		loadString(buffer, ": ", &index)
-		loadString(buffer, v, &index)
-		loadString(buffer, "\r\n", &index)
-	}
-	loadString(buffer, "\r\n", &index)
-
-	// Body
-	if len(response.Body) > 0 {
-		copy(buffer[index:], response.Body)
-	}
+    // ETC
 
 	return buffer
 }
