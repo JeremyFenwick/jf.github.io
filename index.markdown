@@ -72,7 +72,23 @@ private static bool TryParseString(ReadOnlySpan<byte> data, int length, ref int 
 
 ### DNS
 
-Build a DNS server with forwarding enabled. This project involves a lot of bitwise and byte-level programming where AI assistance is quite useful, but also shows the limitations of those systems overall as they get stuck very easily. It is also quite good at generating test cases if you prime it well. This sort of project plays to Go's strengths - networking applications in Go a breeze with nothing more than the standard library.
+Build a DNS server with forwarding enabled. This project involves a lot of bitwise and byte-level programming where AI assistance is quite useful, but also shows the limitations of those systems overall as they get stuck very easily. It is also quite good at generating test cases if you prime it well. This sort of project plays to Go's strengths - networking applications in Go a breeze with nothing more than the standard library. The lower level control with pointers is something I really miss when using other languages:
+
+```golang
+// PacketContext - context for the handler function required by the udp server
+type PacketContext struct {
+	Data              []byte
+	Address           *net.UDPAddr
+	Logger            *log.Logger
+	Send              SendFunc
+	ForwardingOn      bool
+	ForwardAndReceive ForwardAndReceiveFunc
+}
+
+type SendFunc func(packet []byte, address *net.UDPAddr) error
+
+type ForwardAndReceiveFunc func(packet []byte) ([]byte, error)
+```
 
 * [Denis - Golang](https://github.com/JeremyFenwick/Denis)
 
