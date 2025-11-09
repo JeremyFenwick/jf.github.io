@@ -141,43 +141,4 @@ func (response *Response) Encode() []byte {
 	return buffer
 }
 
-func (response *Response) sizedBuffer() []byte {
-	size := 0
-	// Status line
-	size += 5 + len(response.Version) + 1 // "HTTP/" + Version " " "
-	size += digits(response.Status) + 1   // Status + " "
-	size += len(response.Reason) + 2      // Reason + "\r\n"
-
-	// Headers
-	for k, v := range response.Headers {
-		size += len(k) + 2 + len(v) + 2
-	}
-
-	// Blank line "\r\n"
-	size += 2
-
-	size += len(response.Body)
-	return make([]byte, size)
-}
-
-func loadString(buffer []byte, str string, index *int) {
-	copy(buffer[*index:], str)
-	*index += len(str)
-}
-
-func loadInt(buffer []byte, num int, index *int) {
-	if num == 0 {
-		buffer[*index] = '0'
-		*index++
-		return
-	}
-
-	digitsCount := digits(num)
-	for i := digitsCount - 1; i >= 0; i-- {
-        // Get the last digit then + '0' to get its ASCII value
-		buffer[*index+i] = byte(num%10) + '0'
-		num /= 10
-	}
-	*index += digitsCount
-}
 ```
