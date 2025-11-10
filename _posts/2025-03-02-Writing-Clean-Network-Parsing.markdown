@@ -136,7 +136,7 @@ func (response *Response) Encode() []byte {
 	loadString(buffer, response.Version, &index)
 	loadString(buffer, " ", &index)
 	loadInt(buffer, response.Status, &index)
-    // ETC
+    // etc
 
 	return buffer
 }
